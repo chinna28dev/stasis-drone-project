@@ -1,0 +1,43 @@
+#include <SPI.h>
+#include <RF24.h>
+
+RF24 radio(4, 5); // CE, CSN
+
+const byte address[6] = "DRONE";
+
+struct DataPacket {
+  int throttle;
+  int yaw;
+  int pitch;
+  int roll;
+  bool arm;
+};
+
+DataPacket data;
+
+void setup() {
+  Serial.begin(115200);
+
+  pinMode(34, INPUT); // throttle
+  pinMode(35, INPUT); // yaw
+  pinMode(32, INPUT); // pitch
+  pinMode(33, INPUT); // roll
+  pinMode(27, INPUT_PULLUP); // arm switch
+
+  radio.begin();
+  radio.openWritingPipe(address);
+  radio.setPALevel(RF24_PA_LOW);
+  radio.stopListening();
+}
+
+void loop() {
+  data.throttle = analogRead(34);
+  data.yaw      = analogRead(35);
+  data.pitch    = analogRead(32);
+  data.roll     = analogRead(33);
+  data.arm      = !digitalRead(27);
+
+  radio.write(&data, sizeof(data));
+
+  delay(20);
+}
