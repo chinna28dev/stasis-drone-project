@@ -1,0 +1,37 @@
+#include <Arduino.h>
+#include <Wire.h>
+
+float roll = 0;
+float pitch = 0;
+float yaw = 0;
+
+int throttleInput = 1000;
+bool armed = false;
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin();
+
+  // MPU6050 init placeholder
+  Serial.println("Flight Controller Booting...");
+}
+
+void readIMU() {
+  // TODO: Add MPU6050 sensor read
+}
+
+void computePID() {
+  // TODO: Add PID stabilization
+}
+
+void updateMotors() {
+  // TODO: PWM output to ESCs
+}
+
+void loop() {
+  readIMU();
+  computePID();
+  updateMotors();
+
+  delay(5);
+}
