@@ -92,14 +92,3 @@ Create a working educational drone platform built using self-designed systems.
 
 ---
 
-## Project Structure
-
-```text
-README.md
-journal/
-designs/
-firmware/
-hardware/
-bom/
-images/
-docs/
