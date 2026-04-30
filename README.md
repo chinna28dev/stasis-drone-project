@@ -1,4 +1,7 @@
-<img width="2880" height="1800" alt="Screenshot 2026-04-29 153418" src="https://github.com/user-attachments/assets/d3eb9351-87d6-4fd1-8c92-da9d642d4134" />
+<img width="4032" height="2268" alt="1_R4VRDgKRKOV6ZHccD0GWzA" src="https://github.com/user-attachments/assets/c358b01c-fc87-4c09-85c5-d8008ca918a7" />
+
+Reference image
+
 # stasis-drone-project
 
 #open source diy Educational drone 
